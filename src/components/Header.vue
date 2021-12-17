@@ -6,6 +6,7 @@
       class="header__logo"
       @click="navigateToHome"
     >
+    <p class="header__title">SOCCER LEAGUES</p>
     <a href="https://github.com/YoursTruly450" 
       class="header__git"
       target="_blank"
@@ -23,7 +24,6 @@
 </template>
 
 <script>
-import '@/assets/scss/header.scss';
 
 export default {
   name: 'Header',
@@ -43,3 +43,8 @@ export default {
 }
 
 </script>
+
+<style lang="scss" scoped>
+  @import '@/assets/scss/main.scss';
+  @import '@/assets/scss/header.scss';
+</style>

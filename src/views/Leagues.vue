@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import '@/assets/scss/competitions.scss';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
@@ -47,3 +46,8 @@ export default {
 }
 
 </script>
+
+<style lang="scss" scoped>
+  @import '@/assets/scss/main.scss';
+  @import '@/assets/scss/competitions.scss';
+</style>

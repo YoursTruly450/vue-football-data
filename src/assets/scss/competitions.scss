@@ -1,10 +1,10 @@
 @import '@/assets/scss/main.scss';
 
 .competitions {
-  background-color: #060607;
+  background-color: rgba(6, 6, 7, 0.85);
   box-sizing: border-box;
   padding: 45px;
-  z-index: 0;
+  z-index: 1;
 
   &__caption {
     @include font-type(24px, 28px, #fffafa, bold);

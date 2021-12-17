@@ -8,7 +8,7 @@
 }
 
 html, body {
-  background-color: #292929;
+  background-color: transparent;
   @include font-type(18px, 24px, #fffafa, normal);
 }
 
@@ -30,7 +30,14 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
+  width: 5px;
   background-color: #77bb2f;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  width: 0px;
+  background-color: #000000;
   border-radius: 5px;
 }
 
@@ -38,19 +45,19 @@ a {
   background-color: #629727;
 }
 
-::-moz-scrollbar-button:decrement,
-::-moz-scrollbar-button:increment,
-::-moz-scrollbar-button:vertical:start:decrement,
-::-moz-scrollbar-button:vertical:end:increment,
-::-moz-scrollbar-button:horizontal:start:decrement,
-::-moz-scrollbar-button:horizontal:end:increment,
-::-webkit-scrollbar-button:vertical:start:decrement,
-::-webkit-scrollbar-button:vertical:end:increment,
-::-webkit-scrollbar-button:horizontal:start:decrement,
-::-webkit-scrollbar-button:horizontal:end:increment {
-  width: 0px !important;
-  height: 0px !important;
-}
+// ::-moz-scrollbar-button:decrement,
+// ::-moz-scrollbar-button:increment,
+// ::-moz-scrollbar-button:vertical:start:decrement,
+// ::-moz-scrollbar-button:vertical:end:increment,
+// ::-moz-scrollbar-button:horizontal:start:decrement,
+// ::-moz-scrollbar-button:horizontal:end:increment,
+// ::-webkit-scrollbar-button:vertical:start:decrement,
+// ::-webkit-scrollbar-button:vertical:end:increment,
+// ::-webkit-scrollbar-button:horizontal:start:decrement,
+// ::-webkit-scrollbar-button:horizontal:end:increment {
+//   width: 0px !important;
+//   height: 0px !important;
+// }
 
 
 .main_wrapper {
@@ -58,4 +65,12 @@ a {
   display: block;
   width: 1170px;
   margin: 0 auto;
+
+  &_video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: -1;
+  }
 }
