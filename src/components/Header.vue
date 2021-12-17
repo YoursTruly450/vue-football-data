@@ -12,6 +12,12 @@
       rel="noopener noreferrer"
     >
       powered by YoursTruly
+      <img 
+        :src="require('@/assets/img/main/cat.png')" 
+        alt="main logo" 
+        class="header__git_logo"
+        @click="navigateToHome"
+      >
     </a>
   </nav>
 </template>

@@ -5,7 +5,6 @@ function load(component) {
   return () => import(`@/views/${component}.vue`);
 }
 
-
 Vue.use(VueRouter);
 
 const routes = [
