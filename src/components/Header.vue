@@ -6,14 +6,12 @@
       class="header__logo"
       @click="navigateToHome"
     >
-    <a 
+    <p 
       class="header__title"
-      href="https://github.com/YoursTruly450"
-      target="_blank"
-      rel="noopener noreferrer"
+      @click="navigateToHome"
     >
       SOCCER LEAGUES
-    </a>
+    </p>
     <a href="https://github.com/YoursTruly450" 
       class="header__git"
       target="_blank"
