@@ -1,0 +1,38 @@
+@import '@/assets/scss/main.scss';
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a0a0a;
+  box-sizing: border-box;
+  padding: 15px 75px;
+
+  &__logo {
+    display: block;
+    height: 100px;
+    cursor: pointer;
+    transition: all 0.5s;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__git {
+    @include font-type(28px, 32px, #fffafa, normal);
+    transition: all 0.5s;
+
+    &:hover {
+      opacity: 0.75;
+      transform: scale(0.95);
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import '@/assets/scss/main.scss';
+
+.competitions {
+  background-color: #060607;
+  box-sizing: border-box;
+  padding: 30px;
+
+  &__list {
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+    grid-auto-rows: 150px;
+
+    &_item {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: #000000;
+      border-radius: 5px;
+      box-shadow: 0px 10px 23px 2px rgba(0, 0, 0, 0.96);
+      cursor: pointer;
+      transition: all 0.05s;
+
+      &-available {
+        background-color: #023020;
+      }
+
+      & p {
+        display: none;
+      }
+
+      &:hover {
+        transform: scale(1.03);
+        opacity: 0.80;
+
+        & p {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include font-type(12px, 14px, #fffafa, normal);
+          box-sizing: border-box;
+          padding: 4px;
+          background-color: #000000;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}

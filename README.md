@@ -4,6 +4,9 @@ vue2 vuex
 
 https://www.football-data.org/documentation/quickstart
 
+free account
+restriction: 10 calls/minute
+
 ## Project setup
 ```
 npm install
