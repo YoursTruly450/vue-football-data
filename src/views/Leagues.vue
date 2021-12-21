@@ -10,7 +10,19 @@
         :key="index"
         @click="leagueDetails(league)"
       >
-        {{league.name}}
+        <img 
+          :src="league.emblemUrl ? league.emblemUrl : require('../assets/img/main/default_league.png')" 
+          alt="league logo"
+          class="competitions__list_logo"
+        >
+        <div class="competitions__list_text">
+          <div class="competitions__list_name">
+            {{league.name}}
+          </div>
+          <div class="competitions__list_area">
+            {{league.area.name}}
+          </div>
+        </div>
         <p>{{availableCodes.includes(league.code) ? 'League available': 'League not available'}}</p>
       </li>
     </ul>
