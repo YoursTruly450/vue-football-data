@@ -6,8 +6,76 @@
   padding: 45px;
   z-index: 1;
 
+  &__panel {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 16px;
+    box-sizing: border-box;
+    padding: 10px 0px;
+  }
+
   &__caption {
-    @include font-type(24px, 28px, #fffafa, bold);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    @include font-type(18px, 24px, #fffafa, bold);
+  }
+
+  &__search {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 7;
+    grid-column-end: 11;
+    @include font-type(16px, 20px, #fffafa, normal);
+    outline: none;
+    border: 1px solid #ffffff;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEFSURBVHgB1VWBDYIwEPyyCGwgG4gb6AR2E3UCR2AE4wSwgTgBbOAIeB+fSBrytA2YeMml0N73vuVLif4dZk7Q932GpgAz6WqYxpiOPJAoExdghccHuB0NHcGKx8Q8HAg8gS/QKhoLtqyliMlbn+xYE2QyCsjIExLDqy18xJW2LUqcle81m0lLkZBVpG7/uIpy8EnxuIO7OYOG4tHR96xMGqyCxMkgpXhsSNuBodwoEl7lvWqZirCQcsvIE8GHE8JzxK/iSiEYmVhFY2W1pWjzKZ3RskNT0qe2uTqGQ8iVtpe+C+6FWia/gQe8N14GjlEuZHRg7V44msliYBNtu5Y0Wc/g53gDWBIBvqzuxc0AAAAASUVORK5CYII=) no-repeat 100%;
+    background-position-x: calc(100% - 8px);
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 11;
+    grid-column-end: 13;
+    @include font-type(16px, 20px, #fffafa, normal);
+
+    &_box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      box-sizing: border-box;
+      padding: 6px;
+      // background: #ffffff;
+      border: 1px solid #4CBB17;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.5s;
+
+      :hover {
+        opacity: 0.9;
+      }
+    }
+
+    & span {
+      margin-left: 8px;
+      @include font-type(14px, 16px, #fffafa, normal);
+    }
   }
 
   &__list {
