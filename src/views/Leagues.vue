@@ -1,4 +1,3 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
 <template>
   <section class="competitions">
     <div class="competitions__panel">
@@ -65,7 +64,7 @@ export default {
     }
   },
   async created() {
-    await this.getLeagues({id: this.$route.params.id});
+    await this.getLeagues();
   },
   computed: {
     ...mapGetters(['leagues']),

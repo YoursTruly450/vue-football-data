@@ -1,4 +1,4 @@
-import footballData from './modules/footballData';
+import leagueData from './modules/leagueData';
 
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -25,6 +25,6 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    footballData
+    leagueData
   }
 })
