@@ -1,0 +1,69 @@
+@mixin center-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.calendar {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 6, 7, 0.85);
+  box-sizing: border-box;
+  padding: 45px;
+  z-index: 1;
+
+  &__matches {
+    margin-top: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #4CBB17;
+    box-sizing: border-box;
+    padding: 16px;
+
+    &_header {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+      @include font-type(18px, 20px, #7CFC00, bold);
+      margin-bottom: 24px;
+    }
+
+    &_item {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+      @include font-type(16px, 20px, #fffafa, normal);
+      box-sizing: border-box;
+      padding: 12px 0px;
+      border-top: 1px dashed #4CBB17;
+    }
+
+    &_matchday {
+      grid-column: span 2;
+      @include center-text();
+      border-right: 1px solid #4CBB17;
+    }
+
+    &_date {
+      grid-column: span 3;
+      @include center-text();
+      border-right: 1px solid #4CBB17;
+    }
+
+    &_teams {
+      grid-column: span 6;
+      @include center-text();
+      border-right: 1px solid #4CBB17;
+    }
+
+    &_score {
+      grid-column: span 1;
+      @include center-text();
+    }
+  }
+}

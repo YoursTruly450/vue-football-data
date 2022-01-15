@@ -13,7 +13,14 @@
     </section>
     <section class="competition__seasons">
       <div class="competition__seasons_caption">
-        Seasons:
+        <span>Seasons:</span>
+        <label>Choose season start</label>
+        <select id="panel1" v-model="chosenYear" class="competition__seasons_year">
+          <option v-for="year in years" :key="year.value" :value="year.value" class="competition__seasons_year_option">
+            {{year.text}}
+          </option>
+        </select>
+
       </div>
       <div class="competition__seasons_list">
         <div
@@ -21,6 +28,7 @@
           :class="{'competition__seasons_item-current': league.currentSeason.id === season.id}"
           v-for="(season, index) in seasons"
           :key="index"
+          @click="seasonDetails(season)"
         >
           <div 
             v-if="league.currentSeason.id === season.id" 
@@ -35,15 +43,30 @@
             Season complete!
           </div>
           <div class="competition__seasons_item_info">
-            <div class="competition__seasons_item_start">{{season.startDate.toLocaleString()}}</div>
-            <div class="competition__seasons_item_end">{{season.endDate.toLocaleString()}}</div>
-            <div class="competition__seasons_item_passed">{{season.currentMatchday}}</div>
+            <div>
+              <div class="competition__seasons_item_text">
+                Season year: {{new Date(season.startDate).getFullYear()}} - {{new Date(season.endDate).getFullYear()}}
+              </div>
+              <div class="competition__seasons_item_passed">
+                Matches played: {{season.currentMatchday}}
+              </div>
+              <div v-if="season.winner" class="competition__seasons_item_winner">
+                Winner: {{season.winner.name}}
+              </div>
+              <div v-else class="competition__seasons_item_winner">
+                Winner: not specified
+              </div>
+            </div>
+            <img 
+              v-if="season.winner" 
+              :src="season.winner.crestUrl" 
+              alt="team logo"
+              class="competition__seasons_item_img"
+            >
           </div>
-          {{season}}
         </div>
       </div>
     </section>
-    <!-- {{league}} -->
   </section>
 </template>
 
@@ -55,6 +78,7 @@ export default {
   components: {},
   data() {
     return {
+      chosenYear: ''
     }
   },
   async created() {
@@ -67,11 +91,38 @@ export default {
       if (this.league && this.league.seasons) {
         arr = this.league.seasons.filter(season => season.currentMatchday);
       }
-      return arr;
+      return this.chosenYear ? arr.filter(el => {
+          let date = new Date(el.startDate).getFullYear();
+          return date === this.chosenYear;
+        }) : arr
+    },
+    years() {
+      let arr = [];
+      if (this.league && this.league.seasons) {
+        const leagues = this.league.seasons.filter(season => season.currentMatchday);
+        arr = leagues.map((season) => {
+          return {
+            text: new Date(season.startDate).getFullYear(),
+            value: new Date(season.startDate).getFullYear()
+          };
+        })
+      }
+      return ['', ...arr];
     }
   },
   methods: {
     ...mapActions(['getLeague']),
+    seasonDetails(season) {
+      this.$router.push({
+        name: 'SeasonCalendar', 
+        params: {
+          id: this.$route.params.id
+        },
+        query: {
+          season: new Date(season.startDate).getFullYear()
+        }
+      });
+    }
   },
   watch: {},
 }

@@ -18,6 +18,11 @@ const routes = [
     name: 'League',
     component: load('League'),
   },
+  {
+    path: '/calendar/:id?',
+    name: 'SeasonCalendar',
+    component: load('SeasonCalendar'),
+  },
 ]
 
 const router = new VueRouter({
