@@ -1,0 +1,69 @@
+.team {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 6, 7, 0.85);
+  box-sizing: border-box;
+  padding: 45px;
+  z-index: 1;
+
+  &__filters {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+
+    &_date {
+      position: relative;
+      width: 100%;
+      height: 32px;
+      background: transparent;
+      border: 1px solid #2f2f2f;
+      box-sizing: border-box;
+      color: #ffffff;
+      padding: 0 22px;
+      outline: none;
+      cursor: pointer;
+      @include font-type(14px, 20px, #fffafa, normal);
+    }
+  }
+
+  &__info {
+    margin-top: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &_img {
+      margin-right: 32px;
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    &_desc {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_name {
+      @include font-type(32px, 36px, #77bb2f, bold);
+    }
+
+    &_area {
+      margin-top: 6px;
+      @include font-type(28px, 32px, #77bb2f, normal);
+    }
+
+    &_site {
+      margin-top: 12px;
+      @include font-type(16px, 24px, #77bb2f, normal);
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

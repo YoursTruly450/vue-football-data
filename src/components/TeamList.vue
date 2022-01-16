@@ -1,17 +1,18 @@
 <template>
-  <section class="team">
-    <ul v-if="teams.teams && teams.teams.length > 0" class="team__list">
+  <section class="teams">
+    <ul v-if="teams.teams && teams.teams.length > 0" class="teams__list">
       <li 
         v-for="(team, index) in teams.teams" 
         :key="index" 
-        class="team__item"
+        class="teams__item"
+        @click="navigateToTeam(team)"
       >
         <img 
           :src="team.crestUrl" 
           alt="team logo"
-          class="team__img"
+          class="teams__img"
         >
-        <div class="team__text">{{team.name}}</div>
+        <div class="teams__text">{{team.name}}</div>
       </li>
     </ul>
   </section>
@@ -39,6 +40,9 @@ export default {
   },
   methods: {
     ...mapActions(['getTeams']),
+    navigateToTeam(team) {
+      this.$router.push({name: 'Team', params: {id: team.id}});
+    }
   },
   watch: {},
 }

@@ -23,6 +23,11 @@ const routes = [
     name: 'SeasonCalendar',
     component: load('SeasonCalendar'),
   },
+  {
+    path: '/team/:id?',
+    name: 'Team',
+    component: load('Team'),
+  },
 ]
 
 const router = new VueRouter({
