@@ -1,5 +1,6 @@
 import leagueData from './modules/leagueData';
 import matchData from './modules/matchData';
+import teamData from './modules/teamData';
 
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -26,6 +27,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
+    teamData,
     matchData,
     leagueData
   }

@@ -1,0 +1,23 @@
+.back {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &__arrow {
+    width: 32px;
+    height: 32px;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  & span {
+    margin-left: 16px;
+  }
+
+  &:hover {
+    opacity: 0.80;
+  }
+}
