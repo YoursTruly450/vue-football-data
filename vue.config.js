@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: '/vue-football-data/',
   chainWebpack: config => {
     config.module
         .rule('vue')
@@ -7,6 +8,5 @@ module.exports = {
           args.compilerOptions.whitespace = 'preserve'
         })
   },
-  runtimeCompiler: true,
-  publicPath: '/vue-football-data/'
+  runtimeCompiler: true
 }
