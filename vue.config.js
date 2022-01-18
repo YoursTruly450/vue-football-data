@@ -7,5 +7,6 @@ module.exports = {
           args.compilerOptions.whitespace = 'preserve'
         })
   },
-  runtimeCompiler: true
+  runtimeCompiler: true,
+  publicPath: '/vue-football-data/'
 }
