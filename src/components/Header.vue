@@ -41,7 +41,9 @@ export default {
   computed: {},
   methods: {
     navigateToHome(){
-      this.$router.push({ name: 'Leagues'});
+      if (this.$route.name !== 'Leagues') {
+        this.$router.push({ name: 'Leagues'});
+      }
     },
   },
   watch: {},
