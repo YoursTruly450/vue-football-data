@@ -43,8 +43,9 @@ export default {
     navigateToHome(){
       if(this.$route.name !== 'Leagues') {
         this.$router.push({ name: 'Leagues'});
+      } else {
+        this.$router.go(0);
       }
-      this.$router.go(0);
     },
   },
   watch: {},
