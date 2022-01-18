@@ -2,36 +2,38 @@
   <section class="calendar">
     <RouterBack />
     <TeamList />
-    <section class="calendar__filters _mt48">
-      <span>Choose Match Day</span>
-      <span>Choose Start Date</span>
-      <span>Choose EndDate</span>
-    </section>
-    <section class="calendar__filters _mt24">
-      <select 
-        id="panel1" 
-        v-model="chosenDay" 
-        class="calendar__filters_day"
-      >
-        <option v-for="day in days" :key="day" :value="day" class="calendar__filters_day_option">
-          {{day}}
-        </option>
-      </select>
-      <input 
-        id="date" 
-        type="date" 
-        v-model="startDate" 
-        class="calendar__filters_date"
-        @change="changeStartDate"
-      >
-      <input 
-        id="date" 
-        type="date" 
-        v-model="endDate" 
-        class="calendar__filters_date"
-        @change="changeEndDate"
-      >
-    </section>
+    <div class="calendar__mobile">
+      <section class="calendar__filters _mt48">
+        <span>Choose Match Day</span>
+        <span>Choose Start Date</span>
+        <span>Choose EndDate</span>
+      </section>
+      <section class="calendar__filters _mt24">
+        <select
+          id="panel1"
+          v-model="chosenDay"
+          class="calendar__filters_day"
+        >
+          <option v-for="day in days" :key="day" :value="day" class="calendar__filters_day_option">
+            {{day}}
+          </option>
+        </select>
+        <input
+          id="date"
+          type="date"
+          v-model="startDate"
+          class="calendar__filters_date"
+          @change="changeStartDate"
+        >
+        <input
+          id="date"
+          type="date"
+          v-model="endDate"
+          class="calendar__filters_date"
+          @change="changeEndDate"
+        >
+      </section>
+    </div>
     <section v-if="matches.matches && matches.matches.length > 0" class="calendar__matches">
       <div class="calendar__matches_header">
         <div class="calendar__matches_matchday">Match Day</div>

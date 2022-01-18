@@ -67,3 +67,59 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .team {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .team {
+    padding: 24px;
+
+    &__filters {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 16px;
+      row-gap: 16px;
+
+      & span {
+        display: flex;
+        align-items: center;
+        @include font-type(14px, 20px, #fffafa, normal);
+      }
+  
+      &_date {
+        padding:8x;
+        @include font-type(12px, 16px, #fffafa, normal);
+      }
+    }
+
+    &__info {
+      margin-top: 24px;
+  
+      &_img {
+        margin-right: 24px;
+        width: 75px;
+        height: 75px;
+      }
+  
+      &_name {
+        @include font-type(24px, 28px, #77bb2f, bold);
+      }
+  
+      &_area {
+        margin-top: 0px;
+        @include font-type(20px, 24px, #77bb2f, normal);
+      }
+  
+      &_site {
+        margin-top: 8px;
+        @include font-type(14px, 18px, #77bb2f, normal);
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -20,26 +20,28 @@
         </a>
       </div>
     </section>
-    <section class="team__filters _mt48">
-      <span>Choose Start Date</span>
-      <span>Choose EndDate</span>
-    </section>
-    <section class="team__filters _mt24">
-      <input 
-        id="date" 
-        type="date" 
-        v-model="startDate" 
-        class="team__filters_date"
-        @change="changeStartDate"
-      >
-      <input 
-        id="date" 
-        type="date" 
-        v-model="endDate" 
-        class="team__filters_date"
-        @change="changeEndDate"
-      >
-    </section>
+    <div class="calendar__mobile">
+      <section class="team__filters _mt48">
+        <span>Choose Start Date</span>
+        <span>Choose EndDate</span>
+      </section>
+      <section class="team__filters _mt24">
+        <input
+          id="date"
+          type="date"
+          v-model="startDate"
+          class="team__filters_date"
+          @change="changeStartDate"
+        >
+        <input
+          id="date"
+          type="date"
+          v-model="endDate"
+          class="team__filters_date"
+          @change="changeEndDate"
+        >
+      </section>
+    </div>
     <section v-if="teamMatches.matches && teamMatches.matches.length > 0" class="calendar__matches">
       <div class="calendar__matches_header">
         <div class="calendar__matches_matchday">Match Day</div>

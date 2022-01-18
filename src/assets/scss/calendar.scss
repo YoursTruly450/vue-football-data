@@ -113,3 +113,71 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .calendar {
+    padding: 30px;
+
+    &__matches {
+      &_header {
+        @include font-type(14px, 18px, #7CFC00, bold);
+      }
+
+      &_item {
+        @include font-type(12px, 16px, #fffafa, normal);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .calendar {
+    padding: 24px;
+
+    &__mobile {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__filters {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 16px;
+
+      & span {
+        display: flex;
+        align-items: center;
+        @include font-type(14px, 20px, #fffafa, normal);
+      }
+
+      &_day {
+        padding: 8px;
+        background-position-x: calc(100% - 8px);
+        @include font-type(12px, 16px, #fffafa, normal);
+  
+        & option {
+          @include font-type(12px, 16px, #fffafa, normal);
+        }
+      }
+
+      &_date {
+        padding: 8px;
+        @include font-type(12px, 16px, #fffafa, normal)
+      }
+    }
+
+    &__matches {
+      overflow-x: auto;
+
+      &_header {
+        width: 700px;
+        @include font-type(12px, 14px, #7CFC00, bold);
+      }
+
+      &_item {
+        width: 700px;
+        @include font-type(10px, 12px, #fffafa, normal);
+      }
+    }
+  }
+}

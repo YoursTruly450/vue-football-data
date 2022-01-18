@@ -3,7 +3,7 @@
 
   &__list {
     width: 100%;
-    height:auto;
+    height: auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -53,5 +53,31 @@
 
   &__item:hover &__text {
     visibility: visible;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .teams {
+    &__item {
+      width: 100px;
+    }
+
+    &__img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .teams {
+    &__item {
+      width: 75px;
+    }
+
+    &__img {
+      width: 75px;
+      height: 75px;
+    }
   }
 }

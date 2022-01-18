@@ -137,5 +137,103 @@
       }
     }
   }
+}
 
+@media screen and (max-width: 1200px) {
+  .competition {
+    padding: 30px;
+
+    &__seasons {
+      margin-top: 24px;
+
+      &_caption {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        row-gap: 16px;
+        column-gap: 16px;
+
+        & span {
+          grid-row-start: 2;
+          grid-row-end: 3;
+          grid-column-start: 1;
+          grid-column-end: 13;
+        }
+
+        & label {
+          margin-left: 0px;
+          grid-row-start: 1;
+          grid-row-end: 2;
+          grid-column-start: 1;
+          grid-column-end: 7;
+        }
+
+      }
+
+      &_year {
+        width: 100%;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 7;
+        grid-column-end: 13;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .competition {
+    padding: 24px;
+
+    &__header {
+      height: 125px;
+
+      &_league {
+        @include font-type(18px, 22px, #fffafa, bold);
+      }
+  
+      &_area {
+        @include font-type(14px, 16px, #fffafa, normal);
+      }
+    }
+
+    &__seasons {
+      margin-top: 16px;
+
+      &_caption {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        row-gap: 16px;
+        column-gap: 16px;
+
+        & span {
+          @include font-type(24px, 28px, #fffafa, bold);
+        }
+
+        & label {
+          @include font-type(14px, 16px, #fffafa, normal);
+        }
+
+      }
+
+      &_year {
+        height: 36px;
+        padding: 4px 8px;
+        @include font-type(18px, 20px, #fffafa, normal);
+        background-position-x: calc(100% - 8px);
+
+        & option {
+          @include font-type(18px, 20px, #fffafa, normal);
+        }
+      }
+
+      &_item {
+        padding: 16px;
+
+        &_info {
+          @include font-type(14px, 16px, #fffafa, normal);
+        }
+      }
+
+    }
+  }
 }

@@ -155,3 +155,68 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .competitions {
+    padding: 30px;
+
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 185px;
+    }
+
+    &__caption {
+      @include font-type(16px, 18px, #fffafa, bold);
+    }
+
+    &__panel {
+      padding: 0px;
+    }
+
+    &__search {
+      @include font-type(14px, 16px, #fffafa, normal);
+    }
+
+    &__checkbox span {
+      @include font-type(12px, 14px, #fffafa, normal)
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .competitions {
+    padding: 24px;
+
+    &__panel {
+      row-gap: 16px;
+    }
+    
+    &__caption {
+      @include font-type(14px, 18px, #fffafa, bold);
+      grid-row-start: 1;
+      grid-row-end: 1;
+      grid-column-start: 1;
+      grid-column-end: 13;
+      display: flex;
+      justify-content: center;
+    }
+    
+    &__search {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 9;
+    }
+
+    &__checkbox {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 9;
+      grid-column-end: 13;
+    }
+
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

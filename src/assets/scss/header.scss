@@ -60,3 +60,43 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .header {
+    padding: 10px 45px 5px 45px;
+
+    &__title {
+      @include font-type(24px, 28px, #77bb2f, bold);
+    }
+  }
+  
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 10px 15px 5px 15px;
+    height: 80px;
+
+    &__logo {
+      display: block;
+      height: 50px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &__title {
+      @include font-type(14px, 18px, #77bb2f, bold);
+    }
+
+    &__git {
+      @include font-type(10px, 14px, #fffafa, normal);
+
+      &_logo {
+        display: none;
+      }
+    }
+  }
+}
