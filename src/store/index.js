@@ -18,7 +18,7 @@ axios.interceptors.response.use(function (response) {
       return Promise.reject(error);
     }
     alert('Number of requests exceeded, please wait 1 minute...');
-    router.push({name: 'Leagues'});
+    router.push({name: 'Wait'});
     return Promise.reject(error);
 });
 

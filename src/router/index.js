@@ -28,6 +28,11 @@ const routes = [
     name: 'Team',
     component: load('Team'),
   },
+  {
+    path: '/wait',
+    name: 'Wait',
+    component: load('Wait'),
+  },
 ]
 
 const router = new VueRouter({
