@@ -81,8 +81,8 @@ export default {
   },
   data() {
     return {
-      startDate: null,
-      endDate: null
+      startDate: this.$route.query.dateFrom || null,
+      endDate: this.$route.query.dateFrom || null
     }
   },
   async created() {

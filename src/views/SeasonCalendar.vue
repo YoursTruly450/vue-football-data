@@ -75,9 +75,9 @@ export default {
   },
   data() {
     return {
-      chosenDay: null,
-      startDate: null,
-      endDate: null
+      chosenDay: Number(this.$route.query.matchday) || null,
+      startDate: this.$route.query.dateFrom || null,
+      endDate: this.$route.query.dateTo || null
     }
   },
   async created() {

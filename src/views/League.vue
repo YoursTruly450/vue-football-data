@@ -78,7 +78,7 @@ export default {
   components: {},
   data() {
     return {
-      chosenYear: ''
+      chosenYear: Number(this.$route.query.season) || ''
     }
   },
   async created() {
@@ -124,7 +124,32 @@ export default {
       });
     }
   },
-  watch: {},
+  watch: {
+    chosenYear(newVal) {
+      if (newVal !== '') {
+        this.$router.replace(
+          {
+            query: Object.assign(
+              {...this.$route.query},
+              {season: newVal}
+            )
+          },
+          () => {}
+        )
+      } else {
+        let obj = Object.assign({...this.$route.query});
+        delete obj.season;
+        this.$router.replace(
+          {
+            query: Object.assign(
+              {...obj}
+            )
+          },
+          () => {}
+        )
+      }
+    }
+  },
 }
 
 </script>
