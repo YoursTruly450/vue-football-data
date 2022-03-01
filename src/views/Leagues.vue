@@ -59,8 +59,8 @@ export default {
       availableCodes: [
         'WC', 'CL', 'BL1', 'DED', 'BSA', 'PD', 'FL1', 'ELC', 'PPL', 'EC', 'SA', 'PL', 'CLI'
       ],
-      search: '',
-      checked: false
+      search: this.$route.query.search || '',
+      checked: !!this.$route.query.checked || false
     }
   },
   async created() {
@@ -82,7 +82,56 @@ export default {
       this.$router.push({name: 'League', params: {id: league.id}});
     },
   },
-  watch: {},
+  watch: {
+    search(newVal) {
+      if (newVal !== '') {
+        this.$router.replace(
+          {
+            query: Object.assign(
+              {...this.$route.query},
+              {search: newVal}
+            )
+          },
+          () => {}
+        )
+      } else {
+        let obj = Object.assign({...this.$route.query});
+        delete obj.search;
+        this.$router.replace(
+          {
+            query: Object.assign(
+              {...obj}
+            )
+          },
+          () => {}
+        )
+      }
+    },
+    checked(newVal) {
+      if (newVal) {
+        this.$router.replace(
+          {
+            query: Object.assign(
+              {...this.$route.query},
+              {checked: newVal}
+            )
+          },
+          () => {}
+        )
+      } else {
+        let obj = Object.assign({...this.$route.query});
+        delete obj.checked;
+        this.$router.replace(
+          {
+            query: Object.assign(
+              {...obj}
+            )
+          },
+          () => {}
+        )
+      }
+    },
+  },
 }
 
 </script>
